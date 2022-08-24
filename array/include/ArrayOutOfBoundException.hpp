@@ -1,3 +1,6 @@
+#ifndef _ARRAYOUTOFBOUNDEXCEPTION_HPP_
+#define _ARRAYOUTOFBOUNDEXCEPTION_HPP_
+
 #include<iostream>
 #include<string>
 #include"IException.hpp"
@@ -14,3 +17,5 @@ namespace ArrayException{
     };
 
 }
+
+#endif

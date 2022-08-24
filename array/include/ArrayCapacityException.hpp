@@ -1,3 +1,6 @@
+#ifndef _ARRAYCAPACITYEXCEPTION_HPP_
+#define _ARRAYCAPACITYEXCEPTION_HPP_
+
 #include<iostream>
 #include<string>
 #include"IException.hpp"
@@ -14,3 +17,5 @@ namespace ArrayException{
     };
 
 }
+
+#endif
