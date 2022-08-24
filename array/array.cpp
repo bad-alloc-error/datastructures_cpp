@@ -1,13 +1,22 @@
 #include<iostream>
 #include"array.hpp"
+#include"arraycapacityexception.hpp"
 
 namespace array_adt{
+    
+    template<class t>
+    Array::Array(unsigned int arr_capacity){ 
+        
+        if(arr_capacity < 1){
+            throw ArrayCapacityException("ERRO: Capacidade de armazenamento negativa!\n");
+        }
 
-    Array::Array(size_t arr_capacity) : capacity_(arr_capacity){ 
-        array = new size_t[capacity_];
+        capacity_ = arr_capacity;
         size = 0;
+        array = new T[capacity_];
     }
 
+    template<class T>
     Array::~Array(){
         delete [] array;
     }
