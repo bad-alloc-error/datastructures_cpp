@@ -9,7 +9,7 @@ namespace ArrayException{
     }
 
     void ArrayOutOfBoundException::log_message(){
-        std::cerr << "ArrayCapacityException -> " << error_message << std::endl;
+        std::cerr << "ArrayOutOfBoundException -> " << error_message << std::endl;
     }
 
 }
