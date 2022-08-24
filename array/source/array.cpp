@@ -43,24 +43,38 @@ namespace array_adt{
         return size == capacity_;
     }
 
-    bool Array::is_empty(){
+    template<class T>
+    void Array<T>::display(){
+        for(unsigned int{0}; i < size; ++i){
+            std::cout << T[i] << " ";
+        }
+
+        std::cout << "\n";
+    }
+
+    template<class T>
+    bool Array<T>::is_empty(){
         return size == 0;
     }
 
-    unsigned int Array::size_of(){
+    template<class T>
+    unsigned int Array<T>::size_of(){
         return size;
     }
 
-    unsigned int Array::capacity(){
+    template<class T>
+    unsigned int Array<T>::capacity(){
         return capacity_;
     }
 
-    std::istream& operator>> (std::istream& is, Array &a){
+    template<class T>
+    std::istream& operator>> (std::istream& is, Array<T> &a){
         is>>a.array[a.size++];
         return is;
     } 
 
-    std::ostream& operator<< (std::ostream& os, Array &a){
+    template<class T>
+    std::ostream& operator<< (std::ostream& os, Array<T> &a){
 
         for(size_t i{0}; i < a.size; ++i){
             os << a.array[i] << " ";
