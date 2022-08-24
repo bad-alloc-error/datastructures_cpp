@@ -1,7 +1,6 @@
 #include<iostream>
 #include"Array.hpp"
-#include"ArrayCapacityException.hpp"
-#include"ArrayOutOfBoundException.hpp"
+#include"Exceptions.hpp"
 
 
 namespace array_adt{
