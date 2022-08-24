@@ -7,6 +7,7 @@ namespace ArrayException{
 
         protected:
             explicit IException(); 
+            virtual ~IException() = default;
         public:
             virtual void log_message() = 0;        
     };
