@@ -1,0 +1,24 @@
+Array class.
+
+Data Instances:
+    - Array
+    - Capacity
+    - Size
+
+Functions:
+    - create();
+    - insert(position, element);
+    - delete(position, element);
+    - find(position, element);
+    - search(element);
+    - is_empty();
+    - if_full();
+    - lenght();
+    - display();
+    - set();
+    - get();
+    - shift();
+    - rotate();
+
+        0     1     2     3     4     5
+int a[ [15], [85], [10], [74], [28], [33] ]
