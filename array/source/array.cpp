@@ -46,7 +46,7 @@ namespace array_adt{
     template<class T>
     void Array<T>::display(){
         for(unsigned int{0}; i < size; ++i){
-            std::cout << T[i] << " ";
+            std::cout << array[i] << " ";
         }
 
         std::cout << "\n";
