@@ -30,7 +30,7 @@ namespace array_adt{
             throw ArrayException::ArrayOutOfBoundException("ERRO: Fora dos Limites!\n");
         }
 
-        for(unsigned int i = size -1; i >= position - 1; --i){
+        for(unsigned int i = size - 1; i >= position - 1; --i){
             array[i + 1] = array[i];
         }
 
