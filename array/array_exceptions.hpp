@@ -1,11 +1,15 @@
 #include<iostream>
 #include<string>
 
-class ArrayCapacityException{
+namespace ArrayException{
 
-    private:
-        std::string error_message;
-    public:
-        ArrayCapacityException(std::string message); 
-        void log_message();
-};
+    class ArrayCapacityException{
+
+        private:
+            std::string error_message;
+        public:
+            ArrayCapacityException(std::string message); 
+            void log_message();
+    };
+
+}
