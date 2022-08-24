@@ -1,12 +1,13 @@
 #include<iostream>
-#include"array.hpp"
-#include"array_exceptions.hpp"
+#include"Array.hpp"
+#include"ArrayCapacityException.hpp"
+#include"ArrayOutOfBoundException.hpp"
 
 
 namespace array_adt{
     
     template<class T>
-    Array::Array(unsigned int arr_capacity){ 
+    Array<T>::Array(unsigned int arr_capacity){ 
         
         if(arr_capacity < 1){
             throw ArrayException::ArrayCapacityException("ERRO: Capacidade de armazenamento negativa!\n");
@@ -18,11 +19,27 @@ namespace array_adt{
     }
 
     template<class T>
-    Array::~Array(){
+    Array<T>::~Array(){
         delete [] array;
     }
 
-    bool Array::is_full(){
+    template<class T>
+    void Array<T>::insert(T element, unsigned int position){
+
+        if(position < 1 or position > size + 1){
+            throw ArrayException::ArrayOutOfBoundException("ERRO: Fora dos Limites!\n");
+        }
+
+        for(size_t i{0}; i >= position - 1; --i){
+            array[i + 1] = array[i];
+        }
+
+        array[position - 1] = element;
+        size++;
+    }   
+
+    template<class T>
+    bool Array<T>::is_full(){
         return size == capacity_;
     }
 
