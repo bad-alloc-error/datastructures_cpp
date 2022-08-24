@@ -12,7 +12,8 @@ namespace ArrayException{
         private:
             std::string error_message;
         public:
-            explicit ArrayOutOfBoundException(std::string message);
+            ArrayOutOfBoundException(std::string message);
+            ~ArrayOutOfBoundException() override = default;
             void log_message();
     };
 
