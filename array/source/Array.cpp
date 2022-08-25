@@ -33,9 +33,27 @@ namespace array_adt{
             array[i + 1] = array[i];
         }
 
+        /*indice começa por 0 e posição começa por 1, então position -1 é o indice correto*/
         array[position - 1] = element;
         size++;
     }   
+
+    template<class T>
+    void Array<T>::delete_element(T& element, unsigned int position){
+
+        if(position < 1 or position > size){
+            throw ArrayException::ArrayOutOfBoundException("ERRO: Fora dos Limites!\n");
+        }
+
+        element = array[position - 1];
+
+        for(size_t i{position - 1}; i < size; ++i){
+            array[i - 1] = array[i];
+        }
+
+        size--;
+
+    }
 
     template<class T>
     bool Array<T>::is_full(){
