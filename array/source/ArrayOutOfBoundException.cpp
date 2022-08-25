@@ -1,6 +1,6 @@
 #include<iostream>
 #include<string>
-#include"ArrayOutOfBoundException.hpp"
+#include"../include/ArrayOutOfBoundException.hpp"
 
 namespace ArrayException{
 

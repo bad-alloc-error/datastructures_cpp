@@ -14,7 +14,7 @@ namespace ArrayException{
         public:
             ArrayCapacityException(std::string message); 
             ~ArrayCapacityException() override = default;
-            void log_message();
+            void log_message() override;
     };
 
 }

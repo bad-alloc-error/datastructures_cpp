@@ -1,17 +1,15 @@
 #include<iostream>
 #include"array.hpp"
+#include"ArrayCapacityException.hpp"
 
 using array_adt::Array;
 
 int main(){
 
-    Array a;
-
-
-    for(size_t i{0}; i < a.capacity(); ++i){
-        std::cin >> a;
+    try{
+        Array<int> a(5);
+    }catch(ArrayCapacityException& e){
+        e.log_message();
     }
-
-    std::cout << a;
 
 }

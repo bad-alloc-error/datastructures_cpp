@@ -1,4 +1,4 @@
-#include "ArrayCapacityException.hpp"
+#include "../include/ArrayCapacityException.hpp"
 
 namespace ArrayException{
 

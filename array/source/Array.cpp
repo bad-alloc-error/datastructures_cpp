@@ -29,7 +29,7 @@ namespace array_adt{
             throw ArrayException::ArrayOutOfBoundException("ERRO: Fora dos Limites!\n");
         }
 
-        for(unsigned int i = size - 1; i >= position - 1; --i){
+        for(unsigned int i{size - 1}; i >= position - 1; --i){
             array[i + 1] = array[i];
         }
 
@@ -61,12 +61,52 @@ namespace array_adt{
     }
 
     template<class T>
+    T Array<T>::get(unsigned int index){
+
+        if(index < 0 or index > size -1){
+            throw ArrayException::ArrayOutOfBoundException("ERRO: Fora dos limites!\n");
+        }
+
+        return array[index];
+
+    }
+
+    template<class T>
+    void Array<T>::set(T element, unsigned int index){
+        
+        if(index < 1 or index >= size){
+            throw ArrayException::ArrayOutOfBoundException("ERRO: Fora dos Limites!\n");
+        }
+
+        array[index] = element;
+    }
+
+    template<class T>
     void Array<T>::display(){
         for(unsigned int i{0}; i < size; ++i){
             std::cout << array[i] << " ";
         }
 
         std::cout << "\n";
+    }
+
+    template<class T>
+    bool Array<T>::find(T& element, unsigned int position){
+        if(position < 1 or position > size){
+            throw ArrayException::ArrayOutOfBoundException("ERRO: Fora dos limites!\n");
+        }
+        
+        if(element == array[position - 1]){ return true; }
+    }
+
+    template<class T>
+    unsigned int Array<T>::search(T element){
+        /*busca linear*/
+        for(unsigned int i{0}; i < size; ++i){
+            if(element == array[i]){ return i + 1; }
+        }
+        /*caso não encontre o valor*/
+        return -1;
     }
 
     template<class T>
@@ -93,7 +133,7 @@ namespace array_adt{
     template<class T>
     std::ostream& operator<< (std::ostream& os, Array<T> &a){
 
-        for(size_t i{0}; i < a.size; ++i){
+        for(unsigned int i{0}; i < a.size; ++i){
             os << a.array[i] << " ";
         }
 
