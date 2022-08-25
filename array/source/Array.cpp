@@ -1,6 +1,6 @@
 #include<iostream>
-#include"Array.hpp"
-#include"Exceptions.hpp"
+#include"../include/Array.hpp"
+#include"../include/Exceptions.hpp"
 
 
 namespace array_adt{
@@ -47,7 +47,7 @@ namespace array_adt{
 
         element = array[position - 1];
 
-        for(size_t i{position - 1}; i < size; ++i){
+        for(unsigned int i{position}; i < size; ++i){
             array[i - 1] = array[i];
         }
 
@@ -62,7 +62,7 @@ namespace array_adt{
 
     template<class T>
     void Array<T>::display(){
-        for(unsigned int{0}; i < size; ++i){
+        for(unsigned int i{0}; i < size; ++i){
             std::cout << array[i] << " ";
         }
 
